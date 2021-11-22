@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+<!-- HEADER -->
+    <header>
+    </header>
+<!-- MAIN -->
+    <main>
+        <form action="" onsubmit="return false">
+            <h1>Kalorien rechner</h1>
+            <label for="">Körpergröße (cm)</label>
+            <input type="number" name="" id="size">
+            <label for="">alter</label>
+            <input type="number" name="" id="age">
+            <label for="">Gewicht (kg)</label>
+            <input type="number" name="" id="weight">
+            <label for="">Körperbau</label>
+            <input type="radio" name="wm" id="weib"> Weiblich
+            <input type="radio" name="wm" id="mann"> Männlich
+            <label for="">Arbeits - und Freizeitaktivität</label>
+            <select name="" id="sel">
+                <option value="0.95">Schlafen</option>
+                <option value="1.2">Nur Sitzen oder Liegen</option>
+                <option value="1.5">Ausschließlich sitzende Tätigkeit mit wenig oder keiner körperlichen Aktivität in der Freizeit, z.B. Büroarbeit</option>
+                <option value="1.7">Sitzende Tätigkeit mit zeitweilig gehender oder stehender Tätigkeit, z.B. Studierende, Fließbandarbeiter, Laboranten, Kraftfahrer</option>
+                <option value="1.9">Überwiegend gehende oder stehende Tätigkeit, z.B. Verkäufer, Kellner, Handwerker, Mechaniker, Hausfrauen</option>
+                <option value="2.2">Körperlich anstrengende berufliche Arbeit</option>
+            </select>
+            <button onclick="calc()">Submit</button>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>kcal</th>
+                    <th>kj</th>
+                </tr>
+                <tr>
+                    <td>Grundumsatz</td>
+                    <td id="grcal"></td>
+                    <td id="grkj"></td>
+                </tr>
+                <tr>
+                    <td>Gesamtumsatz</td>
+                    <td id="gscal"></td>
+                    <td id="gskj"></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+<!-- FOOTER -->
+    <footer>
+    </footer>
+<!-- SCRIPT -->
+    <script>
+        function calc() {
+            let size = Number(document.getElementById('size').value)
+            let age = Number(document.getElementById('age').value)
+            let weight = Number(document.getElementById('weight').value)
+            let sel = Number(document.getElementById('sel').value)
+            let weiblich = document.getElementById('weib').checked
+            let mann = document.getElementById('mann').checked
+            let grcal = document.getElementById('grcal')
+            let grkj = document.getElementById('grkj')
+
+            let gscal = document.getElementById('gscal')
+            let gskj = document.getElementById('gskj')
+            var Grund;
+            var Gesamt;
+            if (mann) {
+                Grund =  ((664.7 + (13.7 * weight) + (5 * size) - (6.8 * age)) /1000).toFixed(2)
+            }
+            else {
+                Grund =  ((655.1 + (9.6 * weight) + (1.8 * size) - (4.7 * age)) /1000).toFixed(2)
+            }
+            gesamt = (Grund * sel).toFixed(2)
+            grcal.innerHTML = Grund 
+            gscal.innerHTML = gesamt
+            grkj.innerHTML = (Grund * 4.18).toFixed(2)
+            gskj.innerHTML = (gesamt * 4.18).toFixed(2)
+        }
+    </script>
+</body>
+</html>

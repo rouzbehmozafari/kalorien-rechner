@@ -1,0 +1,81 @@
+/* Rout elements */
+/* General Styles */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Karla', sans-serif;
+}
+
+body {
+  max-width: 1440px;
+}
+
+a {
+  color: black;
+}
+
+/* Header */
+/* Main */
+form {
+  text-align: center;
+  width: 370px;
+  background-color: aqua;
+  border-radius: 20px;
+  padding: 3%;
+  margin: auto auto;
+}
+h1 {
+  padding-bottom: 10%;
+}
+form * {
+  margin: auto auto;
+  text-align: center;
+}
+input {
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+select {
+  margin-bottom: 20px;
+  width: 80%;
+  display: block;
+  border-radius: 10px;
+
+}
+input[type ='radio']{
+  display: inline;
+  
+}
+label {
+  display: block;
+  font-weight: bold;
+}
+table {
+  display: block;
+  margin-top: 10%;
+  background-color: rgb(139, 197, 249);
+  border-radius: 20px;
+  width: 90%;
+  border-style: solid;
+}
+table * {
+  padding: 5%;
+}
+button {
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: green;
+  background-color: rgb(179, 250, 148);
+  font-weight: bold;
+}
+td:nth-of-type(2) , th:nth-of-type(2) {
+  padding-left: 30px;
+}
+/* Footer */
+/* Media */
+/*# sourceMappingURL=style.css.map */
